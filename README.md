@@ -26,8 +26,7 @@ En este archivo de python, únicamente es necesaria la importación de la librer
 
 El proyecto se estructura en dos carpetas fundamentales:
 - Python:
-    - Archivo jupyter `evaluacion2_python`, que contiene los ejercicios resueltos de esta segunda evaluación.
-    - Carpeta `data`, donde se encuentra guardado el archivo `.txt` sobre el que se trabaja.
+    - Archivo jupyter `evaluacion2_python`, que contiene los ejercicios resueltos de esta segunda evaluación. En ellos, se pide que se creen diferentes métodos para consultar información contenida dentro del fichero txt facilitado (`quijote.txt`)    - Carpeta `data`, donde se encuentra guardado el archivo `.txt` sobre el que se trabaja.
 
 - SQL:
-    - Archivo SQL `evaluacion2_SQL`, que contiene los ejercicios resueltos de esta segunda evaluación.
+    - Archivo SQL `evaluacion2_SQL`, que contiene los ejercicios resueltos de esta segunda evaluación. En ellos, se presentan 6 ejercicios donde se piden datos que se extraen a través de queries de consulta (haciendo uso de lo aprendido en este último sprint)
