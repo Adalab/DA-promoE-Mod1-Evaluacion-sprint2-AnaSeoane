@@ -4,7 +4,7 @@
 
 El proyecto incluye los ejercicios de la evaluación 2, dentro del módulo 1. En este módulo, hemos aprendido programación en SQL y Python.
 
-## Motivación de la realización del proyecto
+## Motivación del proyecto
 
 Con estas evaluaciones, se pretende mostrar el nivel de adquisición de los conocimientos estudiados a lo largo del módulo. En concreto, en esta segunda parte del módulo 1, se ha estudiado:
 
@@ -18,11 +18,11 @@ Con estas evaluaciones, se pretende mostrar el nivel de adquisición de los cono
     - Queries de consulta avanzadas (GROUP BY, HAVING, CASE)
     - Queries en múltiples tablas (JOIN, UNION, INTERSECT, EXCEPT, SUBCONSULTAS, CTEs)
 
-## Una lista con las librerías que has usado para ejecutar el código.
+## Librerías utilizadas para ejecutar el código
 
 En este archivo de python, únicamente es necesaria la importación de la librería 'os' `import os`.
 
-## La estructura de las carpetas que tiene el proyecto
+## Estructura del proyecto
 
 El proyecto se estructura en dos carpetas fundamentales:
 - Python:
