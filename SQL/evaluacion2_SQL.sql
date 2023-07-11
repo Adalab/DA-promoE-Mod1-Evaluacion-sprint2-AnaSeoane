@@ -14,9 +14,9 @@ ORDER BY `supplier_id`;
 además que hayan vendido a clientes que tengan códigos que comiencen con las letras de la A hasta la G. Por último, en esta búsqueda queremos 
 filtrar solo por aquellos envíos que la fecha de pedido este comprendida entre el 22 y el 31 de Diciembre de cualquier año.*/
 
-	-- Hago right join para poder unir `employees` a `orders`(que es donde he hechas todas las condiciones y así solo tengo que hacer un join) 
+	-- Hago right join para poder unir `employees` a `orders`(que es donde he hechas todas las condiciones) 
 
-SELECT `e`.`employee_id` AS `ID_Empleado`, CONCAT(`e`.`first_name`, ' ', `e`.`last_name`) AS `Nombre_Empleado`
+SELECT `e`.`employee_id` AS `ID_Empleado`, CONCAT(`e`.`first_name`, ' ', `e`.`last_name`) AS `Nombre_Empleado`, `o`.`customer_id`, `o`.`order_date`
 FROM `orders` as `o`
 RIGHT JOIN `employees` AS `e`
 	ON `o`.`employee_id`= `e`.`employee_id`
@@ -24,7 +24,8 @@ WHERE `o`.`employee_id` IN (3, 6) AND
 	MONTH(`o`.`order_date`) = 12 AND 
 	DAY(`o`.`order_date`) BETWEEN 22 AND 31 AND
 	`o`.`customer_id` REGEXP '^[A-G]'
-GROUP BY `e`.`employee_id`, `e`.`first_name`, `e`.`last_name`;
+GROUP BY `e`.`employee_id`, `e`.`first_name`, `e`.`last_name`, `o`.`customer_id`, `o`.`order_date`
+ORDER BY `e`.`employee_id`, `o`.`customer_id`;
 
 /* EJERCICIO 3. Calcula el precio de venta de cada pedido una vez aplicado el descuento. Muestra el id del la orden, el id del producto, 
 el nombre del producto, el precio unitario, la cantidad, el descuento y el precio de venta después de haber aplicado el descuento.*/
@@ -35,7 +36,7 @@ SELECT `od`.`order_id` AS `ID_Orden`,
         `od`.`unit_price` AS `Precio_unitario`, 
         `od`.`quantity` AS `Cantidad`, 
         `od`.`discount` AS `Descuento`, 
-        ROUND(SUM((`od`.`unit_price` - `od`.`unit_price`*`od`.`discount`)*`od`.`quantity`),2) AS `Precio_pedido`
+        ROUND(SUM((`od`.`unit_price` - `od`.`unit_price`*`od`.`discount`)*`od`.`quantity`),2) AS `Precio_venta`
 FROM `order_details` AS `od`
 LEFT JOIN `products` AS `p`
 	ON `od`.`product_id` = `p`.`product_id`
